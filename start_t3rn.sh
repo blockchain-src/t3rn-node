@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 切换到节点运行目录
-cd ~/executor/executor/bin || { echo "节点目录未找到！"; exit 1; }
+cd ./executor/executor/bin || { echo "节点目录未找到！"; exit 1; }
 
 # 配置环境变量
 export NODE_ENV=testnet
