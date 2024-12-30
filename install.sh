@@ -67,7 +67,7 @@ export EXECUTOR_PROCESS_CLAIMS=true
 echo "\n=== 设置私钥 ==="
 read -p "请输入您的 EVM 私钥: " PRIVATE_KEY_INPUT
 export PRIVATE_KEY_LOCAL="$PRIVATE_KEY_INPUT"
-echo "PRIVATE_KEY_LOCAL=$PRIVATE_KEY_INPUT" >> "~/.env"
+echo "PRIVATE_KEY_LOCAL=$PRIVATE_KEY_INPUT" >> "$HOME/.env"
 
 # 注册启用的网络
 echo "\n=== 注册启用的网络 ==="
