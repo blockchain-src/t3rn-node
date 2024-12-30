@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 切换到节点运行目录
-cd ~/executor/executor/bin || { echo "节点目录未找到！"; exit 1; }
+cd ./executor/executor/bin || { echo "节点目录未找到！"; exit 1; }
 
 # 配置环境变量
 export NODE_ENV=testnet
@@ -11,8 +11,8 @@ export EXECUTOR_PROCESS_ORDERS=true
 export EXECUTOR_PROCESS_CLAIMS=true
 
 # 从 .env 文件加载私钥
-if [ -f ~/.env ]; then
-    source ~/.env
+if [ -f $HOME/.env ]; then
+    source $HOME/.env
 else
     echo "未找到 .env 文件，确保您已设置 PRIVATE_KEY_LOCAL。"
     exit 1
